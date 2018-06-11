@@ -1,0 +1,27 @@
+{
+  "name": "react-cardset",
+  "version": "1.0.0",
+  "description": "Responsive, shadowed card components and sets. Views for your views!",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha -w ./tests/*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bellentuck/react-cardset.git"
+  },
+  "keywords": [
+    "react",
+    "card",
+    "responsive",
+    "view",
+    "shadow",
+    "aphrodite"
+  ],
+  "author": "Ben Ellentuck <ellentuckben@gmail.com> (https://bellentuck.github.io/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bellentuck/react-cardset/issues"
+  },
+  "homepage": "https://github.com/bellentuck/react-cardset#readme"
+}
