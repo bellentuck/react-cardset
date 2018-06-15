@@ -4,7 +4,7 @@ import { expect } from 'chai';
 import React from 'react';
 import enzyme, { shallow } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
-import Cardset from './Cardset';
+import Cardset from '../components/Cardset';
 
 const adapter = new Adapter();
 enzyme.configure({ adapter });
@@ -22,7 +22,7 @@ describe('The `Cardset` component', () => {
       it('Defaults to indices for keys if an array passed in');
     });
 
-    describe('Outputs based on the size prop');
+    xdescribe('Outputs based on the size prop');
   });
 
 });
