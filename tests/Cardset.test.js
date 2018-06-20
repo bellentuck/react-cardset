@@ -1,5 +1,8 @@
 /* global describe beforeEach it */
 
+// This resource was key to making Babel happen (specifically babel-register and test script tips) --
+// https://github.com/babel/example-node-server
+
 import { expect } from 'chai';
 import React from 'react';
 import enzyme, { shallow } from 'enzyme';
