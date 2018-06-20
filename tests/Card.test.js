@@ -7,7 +7,21 @@
 
 /* global describe it */
 
+import { expect } from 'chai';
+import React from 'react';
+import enzyme, { shallow } from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
+import Card from '../components/Card';
+
+const adapter = new Adapter();
+enzyme.configure({ adapter });
+
 describe('The baseline Card component', () => {
+
+  it.only('Should render a component', () => {
+    expect(shallow(<Card>{'hi'}</Card>)).not.to.throw()
+  })
+
   describe('Wrapping children in an appropriately-styled card', () => {
     it('Takes an optional `styles` prop')
     it('If `styles` does not contain box shadows...')
