@@ -16,10 +16,16 @@ import Card from '../components/Card';
 const adapter = new Adapter();
 enzyme.configure({ adapter });
 
+console.log('GOT HERE')
+
 describe('The baseline Card component', () => {
+  let card;
+  beforeEach(() => {
+    card = shallow(<Card>{'hi'}</Card>);
+  })
 
   it.only('Should render a component', () => {
-    expect(shallow(<Card>{'hi'}</Card>)).not.to.throw()
+    expect(shallow(card).not.to.throw())
   })
 
   describe('Wrapping children in an appropriately-styled card', () => {
