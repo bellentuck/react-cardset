@@ -17,10 +17,20 @@ re: `children` (default prop - basically content)
 - See: https://codeburst.io/a-quick-intro-to-reacts-props-children-cb3d2fce4891
 */
 
-const Card = ({ styles, children }) => (
-  <div className={css( compose('card')(styles) )}>
-    {children}
-  </div>
-);
+// const Card = ({ styles, children }) => (
+//   <div className={css( compose('card')(styles) )}>
+//     {children}
+//   </div>
+// );
+
+class Card extends React.Component {
+  render() {
+    return (
+      <div className={css( compose('card')(this.props.styles) )}>
+        {this.props.children}
+      </div>
+    )
+  }
+}
 
 export default Card;
