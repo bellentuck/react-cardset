@@ -22,9 +22,14 @@ const Cardset = ({ cardContents, styles }) => {
     Object.keys(cardContents).map(key => {
       const singleCardContents = cardContents[key];
       return (
-        <Card key={key} styles={styles}>
-          {singleCardContents}
-        </Card>
+        React.createElement(
+          Card,
+          { key, styles },
+          singleCardContents
+        )
+        // <Card key={key} styles={styles}>
+        //   {singleCardContents}
+        // </Card>
       );
     })
   );

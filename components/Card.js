@@ -26,9 +26,16 @@ re: `children` (default prop - basically content)
 class Card extends React.Component {
   render() {
     return (
-      <div className={css( compose('card')(this.props.styles) )}>
-        {this.props.children}
-      </div>
+      React.createElement(
+        'div',
+        {
+          className: css( compose('card')(this.props.styles) )
+        },
+        this.props.children
+      )
+      // <div className={css( compose('card')(this.props.styles) )}>
+      //   {this.props.children}
+      // </div>
     )
   }
 }

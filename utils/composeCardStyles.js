@@ -5,17 +5,20 @@ import {balancedLight} from '../boxShadowLibrary';
 
 const setShadows = boxShadow => {
   let boxShadowDefault, boxShadowHover, boxShadowActive;
-  if (!boxShadow || !Array.isArray(boxShadow)) {
+  if (!boxShadow) {
     boxShadowDefault = balancedLight.default;
     boxShadowHover = balancedLight.hover;
     boxShadowActive = balancedLight.active;
   } else {
-    if (boxShadow.length < 2 || boxShadow.length > 3) {
+    if (typeof boxShadow !== 'object' ||
+      Object.values(boxShadow).length < 2 || Object.values(boxShadow).length > 3) {
       throw Error(`The "boxShadow" prop should reference an object of the
       form "{ default, hover }" or "{ default, hover, active }".`);
     }
-    [ boxShadowDefault, boxShadowHover, boxShadowActive ] = boxShadow;
-    if (boxShadow.length === 2) boxShadowActive = boxShadowDefault;
+    boxShadowDefault = boxShadow.default;
+    boxShadowHover = boxShadow.hover;
+    boxShadowActive = boxShadow.active;
+    if (Object.values(boxShadow).length === 2) boxShadowActive = boxShadowDefault;
   }
   return [
     boxShadowDefault,
