@@ -10,13 +10,12 @@ const propTypeErr = (component, prop, types) =>
 
 const Cardset = ({ cardContents, styles }) => {
 
-  if (!cardContents) throw requiredPropErr('Cardset', 'cardComponents');
+  if (!cardContents) throw requiredPropErr('Cardset', 'cardContents');
 
   const isCardArrLiteral = Array.isArray(cardContents);
-  const isCardObjLiteral = Object.prototype.toString.call(cardContents)
-                                                    .slice(8, -1) === 'Object';
+  const isCardObjLiteral = Object.prototype.toString.call(cardContents).slice(8, -1) === 'Object';
   if (!(isCardArrLiteral || isCardObjLiteral)) {
-    throw propTypeErr('Cardset', 'cardComponents', 'an array or object literal');
+    throw propTypeErr('Cardset', 'cardContents', 'an array or object literal');
   }
 
   return (
