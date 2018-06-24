@@ -1,6 +1,6 @@
 {
   "name": "react-cardset",
-  "version": "1.0.0",
+  "version": "1.0.4",
   "description": "Responsive, shadowed card components and sets. Views for your views!",
   "main": "index.js",
   "scripts": {
