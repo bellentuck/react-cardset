@@ -18,7 +18,7 @@ describe('The `Cardset` component', () => {
   const indexedContents = { wnryubva: 'a', dmfufnen: 'b', muncroie: 'c', agtjrbtb: 'd', quixeowy: 'e' };
 
   describe('Inputs', () => {
-    it('Can take two props, `cardContents` and `styles`', () => {
+    it.only('Can take two props, `cardContents` and `styles`', () => {
       set = shallow(
         <Cardset cardContents={indexedContents} styles={{}} />
       )

@@ -20,12 +20,13 @@ console.log('GOT HERE')
 
 describe('The baseline Card component', () => {
   let card;
-  beforeEach(() => {
-    card = shallow(<Card>{'hi'}</Card>);
-  })
+  // beforeEach(() => {
+  //   card = <Card>{'hi'}</Card>;
+  // })
 
-  it.only('Should render a component', () => {
-    expect(shallow(card).not.to.throw())
+  it('Should render a component', () => {
+    card = shallow(<Card>{'hi'}</Card>);
+    console.log(card)
   })
 
   describe('Wrapping children in an appropriately-styled card', () => {

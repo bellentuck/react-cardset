@@ -1,7 +1,7 @@
 // This utility file provides a constructor-like helper method for styling card boxes.
 
 import { StyleSheet } from 'aphrodite/no-important';
-import { balancedLight } from '../boxShadowLibrary';
+import {balancedLight} from '../boxShadowLibrary';
 
 const setShadows = boxShadow => {
   let boxShadowDefault, boxShadowHover, boxShadowActive;
