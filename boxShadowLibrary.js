@@ -1,6 +1,6 @@
 // This file details options for shadows (shades, spectres, fates, familiars) for boxes.
 
-export default {
+module.exports = {
   balanced: {
     default: 'rgb(204, 204, 204) 0px 0.5px 3px 0px',
     hover: 'rgb(204, 204, 204) 0px 0.5px 4px 0px',
