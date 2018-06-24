@@ -26,8 +26,8 @@ describe('The baseline Card component', () => {
 
   it('Should render a component', () => {
     card = shallow(<Card>{'hi'}</Card>);
-    console.log(card)
-  })
+    expect(() => card).not.to.throw();
+  });
 
   describe('Wrapping children in an appropriately-styled card', () => {
     it('Takes an optional `styles` prop')

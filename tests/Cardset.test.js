@@ -18,31 +18,30 @@ describe('The `Cardset` component', () => {
   const indexedContents = { wnryubva: 'a', dmfufnen: 'b', muncroie: 'c', agtjrbtb: 'd', quixeowy: 'e' };
 
   describe('Inputs', () => {
-    it.only('Can take two props, `cardContents` and `styles`', () => {
+    it('Can take two props, `cardContents` and `styles`', () => {
       set = shallow(
         <Cardset cardContents={indexedContents} styles={{}} />
       )
-      expect(set).not.to.throw();
+      expect(() => set).not.to.throw();
     });
     it('Requires only the `cardContents` prop', () => {
-      const err = 'The Cardset component requires a cardContents prop';
-      expect(shallow(<Cardset cardContents={indexedContents} />)).not.to.throw();
-      expect(shallow(<Cardset styles={{}} />)).to.throw(err);
-      expect(shallow(<Cardset />)).to.throw(err);
+      const err = `The Cardset component requires a cardContents prop.`;
+      expect(() => shallow(<Cardset cardContents={indexedContents} />)).not.to.throw();
+      expect(() => shallow(<Cardset styles={{}} />)).to.throw(err);
+      expect(() => shallow(<Cardset />)).to.throw(err);
     });
     it('Requires the `cardContents` prop to be an array or object literal', () => {
-      const err = `The Cardset component requires its cardContents prop
-                  to be an array or object literal.`;
-      expect(shallow(<Cardset cardContents={contents} />)).not.to.throw();
-      expect(shallow(<Cardset cardContents={indexedContents} />)).not.to.throw();
-      expect(shallow(<Cardset cardContents={function(){}} />)).to.throw(err);
-      expect(shallow(<Cardset cardContents="string" />)).to.throw(err);
-      expect(shallow(<Cardset cardContents={42} />)).to.throw(err);
+      const err = `The Cardset component requires its cardContents prop to be an array or object literal.`;
+      expect(() => shallow(<Cardset cardContents={contents} />)).not.to.throw();
+      expect(() => shallow(<Cardset cardContents={indexedContents} />)).not.to.throw();
+      expect(() => shallow(<Cardset cardContents={function(){}} />)).to.throw(err);
+      expect(() => shallow(<Cardset cardContents="string" />)).to.throw(err);
+      expect(() => shallow(<Cardset cardContents={42} />)).to.throw(err);
     });
   });
 
 
-  xdescribe('Outputs based on props', () => {
+  describe('Outputs based on props', () => {
     beforeEach(() => {
       set = shallow(<Cardset cardContents={indexedContents} />);
     });
@@ -51,8 +50,5 @@ describe('The `Cardset` component', () => {
       it('Utilizes object keys for keys in each React `Card` component');
       it('Defaults to indices for keys if an array passed in');
     });
-
-    xdescribe('Outputs based on the size prop');
   });
-
 });
